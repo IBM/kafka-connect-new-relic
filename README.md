@@ -1,5 +1,5 @@
-## Newrelic Source Connector
-This kafka source connector is designed to pull data from newrelic using **Insights Api** and dump that raw data into a kafka topic. It can be configured to run one or more adhoc NRQL queries.
+## New Relic Source Connector
+This kafka source connector is designed to pull data from New Relic using **Insights Api** and dump that raw data into a kafka topic. It can be configured to run one or more adhoc NRQL queries.
 
 ## Build
 It uses gradle build tool. To build this connector, run this from project root:
@@ -21,7 +21,7 @@ Once uberjar is built, run this command from project root to build a docker cont
     docker build --no-cache --rm -t connect-with-newrelic:5.2.3 .
 
 ## Run
-Use provided **docker-compose.yml** to spin up this container along with other essential dependencies. This will start zookeeper, kafka-broker, kafka-schema-registry, and kafka connect runtime (with newrelic source connector bundled). Use this command to start all relevant containers:
+Use provided **docker-compose.yml** to spin up this container along with other essential dependencies. This will start zookeeper, kafka-broker, kafka-schema-registry, and kafka connect runtime (with New Relic source connector bundled). Use this command to start all relevant containers:
 
     docker-compose up -d
  
