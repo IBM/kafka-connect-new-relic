@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'application'
+    id "com.github.johnrengelman.shadow" version "4.0.4"
+}
+
+group = 'com.ibm.connect.newrelic'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    maven {
+        url = 'http://packages.confluent.io/maven/'
+    }
+}
+
+application {
+    mainClassName = 'com.ibm.connect.newrelic.NewRelicSourceConnector'
+}
+
+dependencies {
+    implementation 'org.apache.kafka:connect-api:2.2.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.14.1'
+    implementation 'org.json:json:20180813'
+    // Logging
+    implementation 'org.slf4j:slf4j-api:1.7.25'
+    implementation 'org.slf4j:slf4j-simple:1.7.25'
+    // Testing
+    testCompile 'org.junit.jupiter:junit-jupiter-engine:5.2.0'
+    testCompile 'org.junit.jupiter:junit-jupiter-api:5.2.0'
+    testCompile 'org.mockito:mockito-core:2.6.3'
+    testCompile 'ch.qos.logback:logback-classic:1.1.8'
+}
