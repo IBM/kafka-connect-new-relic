@@ -192,7 +192,7 @@ public class NewRelicHttpClient {
             try {
                 candidate = this._okHttpClient.newCall(request).execute();
             } catch (IOException ex) {
-                log.error("The following error occurred while sending request [{}]. [{}]", request, ex);
+                log.error("The following error occurred while sending request [{}]. [{}]", request, ex.toString());
             }
 
             if (candidate == null || !candidate.isSuccessful()) {
